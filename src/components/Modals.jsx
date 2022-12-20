@@ -1,4 +1,4 @@
-export default ({ member, handleClose }) => {
+export default ({ member, handleClose, handleChange}) => {
   return (
     <dialog id="modal-member" open>
       <article>
@@ -21,6 +21,10 @@ export default ({ member, handleClose }) => {
               <p>{member.bio}</p>
             </hgroup>
           </div>
+        </hgroup>
+        <hgroup style={{display:"flex"}}>
+          <a href="#" role="button" onClick={()=> {handleChange(Number(member.id)-1)}}>Previous</a>
+          <a href="#" role="button" onClick={() => {handleChange(Number(member.id)+ 1)}} style={{ marginLeft:"auto"}}>Next</a>
         </hgroup>
       </article>
     </dialog>
